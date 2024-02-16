@@ -83,4 +83,8 @@ export const ContainerInfo = styled.div`
   font-weight: 600;
   font-size: 1rem;
 
+  span{
+    text-align: center;
+  }
+
 `;

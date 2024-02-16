@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 import { FaSearch } from "react-icons/fa";
 
 import api from "../services/api";
@@ -21,11 +21,11 @@ const App = () => {
   const handleClick = async () => {
     if (!inputCep.current.value) {
       Swal.fire({
-        title: 'Vazio',
-        text: 'Por favor, Digite o CEP',
-        icon: 'warning',
-        confirmButtonText: 'Ok'
-      })
+        title: "Vazio",
+        text: "Por favor, Digite o CEP",
+        icon: "warning",
+        confirmButtonText: "Ok",
+      });
       return;
     }
 
@@ -34,13 +34,12 @@ const App = () => {
       setCep(response.data);
       inputCep.current.value = "";
     } catch (error) {
-
       Swal.fire({
-        title: 'Error',
-        text: 'Por favor digite um CEP valido!',
-        icon: 'error',
-        confirmButtonText: 'Ok'
-      })
+        title: "Error",
+        text: "Por favor digite um CEP valido!",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
 
       inputCep.current.value = "";
     }
@@ -51,7 +50,12 @@ const App = () => {
       <Container>
         <Titulo>Buscador de CEP</Titulo>
         <ContainerInput>
-          <Input type="text" ref={inputCep} maxLength={8}></Input>
+          <Input
+            type="text"
+            ref={inputCep}
+            maxLength={8}
+            placeholder="CEP"
+          ></Input>
           <ButtonSearch>
             <FaSearch onClick={handleClick} cursor={"pointer"} />
           </ButtonSearch>
