@@ -14,7 +14,7 @@ export const Container = styled.div`
   background-color: #1b2327;
   box-shadow: 0px 0px 0px 0.5px #000;
   width: 30%;
-  max-width: 500px;
+  min-width: 500px;
   padding: 2%;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ export const Container = styled.div`
   @media ${device.tablet}{
     width: 100%;
     height: 100%;
-    min-width: none;
+    min-width: 0;
     justify-content: center;
   }
 `;
